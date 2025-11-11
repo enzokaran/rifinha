@@ -1,0 +1,137 @@
+body {
+    font-family: 'Inter', sans-serif; /* Fonte moderna */
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+#app {
+    max-width: 500px;
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    animation: fadeInUp 0.5s ease-out;
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.page {
+    display: none;
+}
+.page.active {
+    display: block;
+}
+h1, h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+h1 i, h2 i {
+    color: #3498db;
+    margin-right: 8px;
+}
+.input-group {
+    position: relative;
+    margin: 15px 0;
+}
+.input-group i {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #bdc3c7;
+}
+input {
+    width: 100%;
+    padding: 12px 40px;
+    border: 1px solid #ecf0f1;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+}
+input:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+    outline: none;
+}
+.btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 'background' 0.3s, transform 0.2s;
+    margin: 10px 0;
+}
+.btn-primary {
+    background: #3498db;
+    color: white;
+}
+.btn-primary:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+.btn-secondary {
+    background: #ecf0f1;
+    color: #2c3e50;
+}
+.btn-secondary:hover {
+    background: #bdc3c7;
+}
+
+.btn-link {
+    background: none;
+    color: #3498db;
+    text-decoration: underline;
+    border: none;
+    padding: 0;
+    margin: 10px 0;
+}
+.btn-link:hover {
+    color: #2980b9;
+}
+#numberGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    gap: 10px;
+    margin: 20px 0;
+}
+.number {
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #27ae60;
+    color: white;
+    font-weight: bold;
+    transition: 'background' 0.3s, transform 0.2s;
+}
+.number:hover {
+    background: #2ecc71;
+    transform: scale(1.05);
+}
+.number.unavailable {
+    background: #e74c3c;
+    cursor: not-allowed;
+}
+.number.unavailable:hover {
+    background: #c0392b;
+    transform: none;
+}
+@media (max-width: 600px) {
+    #app {
+        padding: 20px;
+        margin: 10px;
+    }
+    #numberGrid {
+        grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+    }
+}
